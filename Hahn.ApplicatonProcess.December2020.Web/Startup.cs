@@ -1,5 +1,14 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
+
+using Hahn.ApplicatonProcess.December2020.Data.Contracts;
+using Hahn.ApplicatonProcess.December2020.Data.Infrastructure;
+using Hahn.ApplicatonProcess.December2020.Domain.Helpers;
+using Hahn.ApplicatonProcess.December2020.Domain.Models;
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -20,7 +29,13 @@ namespace Hahn.ApplicatonProcess.December2020.Web
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
+            services.AddControllers()
+                    .AddFluentValidation();
+
+            services.AddTransient<IValidator<Applicant>, ApplicantValidator>();
+            services.AddScoped<IApplicantsRepository, ApplicantsRepository>();
+            services.AddDbContext<ApplicantsDbContext>(opt => opt.UseInMemoryDatabase(databaseName: "HahnInMemory"));
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Hahn.ApplicatonProcess.December2020.Web", Version = "v1" });

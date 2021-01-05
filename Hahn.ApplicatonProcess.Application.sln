@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hahn.ApplicatonProcess.December2020.Web", "Hahn.ApplicatonProcess.December2020.Web\Hahn.ApplicatonProcess.December2020.Web.csproj", "{FDAE6BC6-DE44-4837-9AC7-68705A5611F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hahn.ApplicatonProcess.December2020.Data", "Hahn.ApplicatonProcess.December2020.Data\Hahn.ApplicatonProcess.December2020.Data.csproj", "{3C93EE8D-607C-41CD-8494-52E7680D14B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hahn.ApplicatonProcess.December2020.Domain", "Hahn.ApplicatonProcess.December2020.Domain\Hahn.ApplicatonProcess.December2020.Domain.csproj", "{A4214170-3C66-486D-87CF-6152D617F9CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{FDAE6BC6-DE44-4837-9AC7-68705A5611F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDAE6BC6-DE44-4837-9AC7-68705A5611F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDAE6BC6-DE44-4837-9AC7-68705A5611F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C93EE8D-607C-41CD-8494-52E7680D14B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C93EE8D-607C-41CD-8494-52E7680D14B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C93EE8D-607C-41CD-8494-52E7680D14B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C93EE8D-607C-41CD-8494-52E7680D14B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4214170-3C66-486D-87CF-6152D617F9CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4214170-3C66-486D-87CF-6152D617F9CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4214170-3C66-486D-87CF-6152D617F9CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4214170-3C66-486D-87CF-6152D617F9CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
