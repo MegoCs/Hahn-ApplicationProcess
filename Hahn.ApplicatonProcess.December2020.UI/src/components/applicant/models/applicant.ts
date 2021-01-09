@@ -4,7 +4,7 @@ export class Applicant{
     familyName:string;
     address:string;
     countryOfOrigin:string;
-    emailAdress:string;
+    emailAddress:string;
     age:number;
     hired:boolean;
 }

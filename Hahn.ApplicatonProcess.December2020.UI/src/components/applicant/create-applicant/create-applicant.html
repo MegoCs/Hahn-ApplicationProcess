@@ -1,50 +1,50 @@
 <template>
-  <form class="form card" submit.trigger="addApplicant()">
+  <form class="form card" submit.trigger="send()">
     <div class="card-block mx-auto">
       <h4 class="my-5">Create Applicant</h4>
       <hr />
       <div class="form-group">
         <label for="name">Name</label>
-        <input name="name" class="form-control" value.bind="applicant.name"></input>
+        <input name="name" class="form-control" value.bind="applicant.name & validate"></input>
       </div>
 
       <div class="form-group">
         <label for="familyName">FamilyName</label>
-        <input name="familyName" class="form-control" value.bind="applicant.familyName"></input>
+        <input name="familyName" class="form-control" value.bind="applicant.familyName & validate"></input>
       </div>
 
       <div class="form-group">
         <label for="address">Address</label>
-        <input name="address" class="form-control" value.bind="applicant.address"></input>
+        <input name="address" class="form-control" value.bind="applicant.address & validate"></input>
       </div>
 
       <div class="form-group">
         <label for="countryOfOrigin">CountryOfOrigin</label>
-        <input name="countryOfOrigin" class="form-control" value.bind="applicant.countryOfOrigin"></input>
+        <input name="countryOfOrigin" class="form-control" value.bind="applicant.countryOfOrigin & validate"></input>
       </div>
 
       <div class="form-group">
         <label for="emailAddress">EmailAddress</label>
-        <input name="emailAddress" class="form-control" value.bind="applicant.emailAddress"></input>
+        <input name="emailAddress" class="form-control" value.bind="applicant.emailAddress & validate"></input>
       </div>
 
       <div class="form-group">
         <label for="age">Age</label>
-        <input type='number' name="age" class="form-control" value.bind="applicant.age"></input>
+        <input type='number' name="age" class="form-control" value.bind="applicant.age & validate"></input>
       </div>
 
       <div class="form-group">
-        <input type="checkbox" name="hired" checked.bind="applicant.hired"/>
+        <input type="checkbox" name="hired" checked.bind="applicant.hired & validate"/>
         <label for="hired">Hired</label>
       </div>
 
       <hr />
 
-      <button type="submit" class="btn btn-primary">
+      <button type="submit" class="btn btn-primary" disabled.bind="sendDisabled">
         Send
       </button>
 
-      <button type="reset" class="btn btn-primary" disabled="true"> 
+      <button type="button" click.delegate="reset()" class="btn btn-primary" disabled.bind="resetDisabled"> 
         Reset
       </button>
 
