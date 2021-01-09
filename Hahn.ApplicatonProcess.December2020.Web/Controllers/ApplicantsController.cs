@@ -2,6 +2,7 @@
 using Hahn.ApplicatonProcess.December2020.Domain.Models;
 
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 using System.Threading.Tasks;
 
@@ -12,9 +13,12 @@ namespace Hahn.ApplicatonProcess.December2020.Web.Controllers
     public class ApplicantsController : ControllerBase
     {
         private readonly IApplicantsRepository _applicantsRepository;
-        public ApplicantsController(IApplicantsRepository applicantsRepository)
+        private readonly ILogger<ApplicantsController> _logger;
+
+        public ApplicantsController(IApplicantsRepository applicantsRepository, ILogger<ApplicantsController> logger)
         {
             _applicantsRepository = applicantsRepository;
+            _logger = logger;
         }
 
         // GET: api/Applicants/5
@@ -25,6 +29,7 @@ namespace Hahn.ApplicatonProcess.December2020.Web.Controllers
 
             if (applicant == null)
             {
+                _logger.LogWarning($"Applicant {id} wasn`t found");
                 return NotFound();
             }
 
@@ -37,6 +42,7 @@ namespace Hahn.ApplicatonProcess.December2020.Web.Controllers
         {
             if (id != applicant.ID)
             {
+                _logger.LogWarning($"Applicant {id} wasn`t found");
                 return BadRequest();
             }
 
@@ -50,6 +56,9 @@ namespace Hahn.ApplicatonProcess.December2020.Web.Controllers
         public async Task<ActionResult<Applicant>> PostApplicant(Applicant applicant)
         {
             await _applicantsRepository.CreateApplicant(applicant);
+
+            _logger.LogInformation($"Applicant {applicant.ID} was created");
+
             return CreatedAtAction("GetApplicant", new { id = applicant.ID }, applicant);
         }
 
@@ -59,7 +68,13 @@ namespace Hahn.ApplicatonProcess.December2020.Web.Controllers
         {
             var applicant = await _applicantsRepository.DeleteApplicant(id);
             if (applicant == null)
+            {
+                _logger.LogWarning($"Applicant {id} wasn`t found");
                 return NotFound();
+            }
+
+
+            _logger.LogInformation($"Applicant {id} was deleted");
             return NoContent();
         }
     }

@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
 namespace Hahn.ApplicatonProcess.December2020.Web
@@ -39,6 +40,13 @@ namespace Hahn.ApplicatonProcess.December2020.Web
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Hahn.ApplicatonProcess.December2020.Web", Version = "v1" });
+            });
+
+            services.AddLogging(loggingBuilder =>
+            {
+                loggingBuilder
+                        .AddFilter("Microsoft", LogLevel.Information)
+                        .AddFilter("System", LogLevel.Error);
             });
         }
 
