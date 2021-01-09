@@ -1,3 +1,53 @@
 <template>
-  <h1>${message}</h1>
+  <form class="form card" submit.trigger="addApplicant()">
+    <div class="card-block mx-auto">
+      <h4 class="my-5">Create Applicant</h4>
+      <hr />
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input name="name" class="form-control" value.bind="applicant.name"></input>
+      </div>
+
+      <div class="form-group">
+        <label for="familyName">FamilyName</label>
+        <input name="familyName" class="form-control" value.bind="applicant.familyName"></input>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input name="address" class="form-control" value.bind="applicant.address"></input>
+      </div>
+
+      <div class="form-group">
+        <label for="countryOfOrigin">CountryOfOrigin</label>
+        <input name="countryOfOrigin" class="form-control" value.bind="applicant.countryOfOrigin"></input>
+      </div>
+
+      <div class="form-group">
+        <label for="emailAddress">EmailAddress</label>
+        <input name="emailAddress" class="form-control" value.bind="applicant.emailAddress"></input>
+      </div>
+
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input type='number' name="age" class="form-control" value.bind="applicant.age"></input>
+      </div>
+
+      <div class="form-group">
+        <input type="checkbox" name="hired" checked.bind="applicant.hired"/>
+        <label for="hired">Hired</label>
+      </div>
+
+      <hr />
+
+      <button type="submit" class="btn btn-primary">
+        Send
+      </button>
+
+      <button type="reset" class="btn btn-primary" disabled="true"> 
+        Reset
+      </button>
+
+  </form>
+  </div>
 </template>
