@@ -1,7 +1,7 @@
 import { Applicant } from "../models/Applicant"
 import { inject, NewInstance } from 'aurelia-framework';
 import { ValidationRules, ValidationController } from "aurelia-validation";
-
+import {BootstrapFormRenderer} from '../../../core/renderers/bootstrapformrenderer'
 @inject(NewInstance.of(ValidationController))
 export class CreateApplicant {
   public applicant: Applicant= new Applicant;
@@ -10,6 +10,7 @@ export class CreateApplicant {
   }
   configureValidation() {
 
+    this.controller.addRenderer(new BootstrapFormRenderer());
     ValidationRules.customRule(
       'validCountry',
       (value, obj) => value === null || value === undefined
@@ -43,7 +44,6 @@ export class CreateApplicant {
   }
   
   get sendDisabled () {
-    this.controller.validate();
     return this.controller.errors.length!=0;
   };
 
