@@ -258,6 +258,12 @@ module.exports = ({ production } = {}, {extractCss, analyze, tests, hmr, port, h
       ]
     })), // ignore dot (hidden) files
     ...when(analyze, new BundleAnalyzerPlugin()),
+
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'src/locales/', to: 'locales/' }
+      ]
+    }),
     /**
      * Note that the usage of following plugin cleans the webpack output directory before build.
      * In case you want to generate any file in the output path as a part of pre-build step, this plugin will likely

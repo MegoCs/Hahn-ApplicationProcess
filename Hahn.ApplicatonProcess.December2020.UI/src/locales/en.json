@@ -1,0 +1,18 @@
+{
+  "CreateApplicant": "Create Applicant",
+  "Name": "Applicant Name",
+  "FamilyName": "Family Name",
+  "Address": "Address",
+  "CountryOfOrigin": "Country Of Origin",
+  "EmailAddress": "Email Address",
+  "Age": "Age",
+  "Hired": "Hired",
+  "Send": "Send",
+  "Reset": "Reset",
+  "DataSentMessage":"Your Information Has been Sent",
+  "RequiredValidationMessage":"Cannot Be Blank.",
+  "EmailalidationMessage":"Is Not a Valid Email",
+  "CountryValidationMessage":"Is Not a Valid Country",
+  "AgeValidationMessage":"Age Must Be Between 20 And 60",
+  "LengthValidationMessage":"Minlength Is "
+}

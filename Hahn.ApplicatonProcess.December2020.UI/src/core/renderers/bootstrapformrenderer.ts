@@ -58,6 +58,7 @@ import {
         // remove the has-error class from the enclosing form-group div
         if (formGroup.querySelectorAll('.help-block.validation-message').length === 0) {
           formGroup.classList.remove('has-error');
+          element.classList.remove('ng-invalid');
         }
       }
     }
