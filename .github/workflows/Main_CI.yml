@@ -25,7 +25,11 @@ jobs:
       
     - name: Test
       run: dotnet test --no-build --verbosity normal
-    
+      
+    - name: dotnet publish
+      run: |
+        dotnet publish -c Release -o Hahn-Web
+        
     - uses: actions/setup-node@v1
       with:
         node-version: '14.x'
@@ -40,4 +44,4 @@ jobs:
       with:
         name: Hahn-Ui
         path: Hahn.ApplicatonProcess.December2020.UI/dist
-    
+          
