@@ -1,0 +1,54 @@
+name: Main_CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      
+    - name: Restore dependencies
+      run: dotnet restore
+      
+    - name: Build
+      run: dotnet build --no-restore
+      
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+      
+    - name: dotnet publish
+      run: |
+        dotnet publish -c Release -o Hahn-Web
+        
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '14.x'
+      
+    - run: npm install
+      working-directory: Hahn.ApplicatonProcess.December2020.UI
+      
+    - run: npm run-script build
+      working-directory: Hahn.ApplicatonProcess.December2020.UI
+    
+    - uses: actions/upload-artifact@v2
+      with:
+        name: Hahn-Ui
+        path: Hahn.ApplicatonProcess.December2020.UI/dist
+        
+    - uses: actions/upload-artifact@v2
+      with:
+        name: Hahn-Web
+        path: Hahn-Web
+        
+    
+          
