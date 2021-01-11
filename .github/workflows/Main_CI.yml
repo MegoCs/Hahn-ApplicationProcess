@@ -44,4 +44,11 @@ jobs:
       with:
         name: Hahn-Ui
         path: Hahn.ApplicatonProcess.December2020.UI/dist
+        
+    - uses: actions/upload-artifact@v2
+      with:
+        name: Hahn-Web
+        path: Hahn.ApplicatonProcess.December2020.UI/**/Hahn-Web
+        
+    
           
