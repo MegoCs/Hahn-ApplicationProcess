@@ -11,10 +11,6 @@ jobs:
 
     runs-on: windows-latest
 
-    strategy:
-          matrix:
-            node-version: [14.x]
-
     steps:
     - uses: actions/checkout@v2
       
@@ -30,10 +26,9 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+    - uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: '14.x'
       
     - run: npm install
       working-directory: Hahn.ApplicatonProcess.December2020.UI
