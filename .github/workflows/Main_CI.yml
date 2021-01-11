@@ -30,5 +30,7 @@ jobs:
       uses: actions/setup-node@v1
       
     - run: npm install
+      working-directory: /Hahn.ApplicatonProcess.December2020.UI
       
     - run: npm run-script build
+      working-directory: /Hahn.ApplicatonProcess.December2020.UI
