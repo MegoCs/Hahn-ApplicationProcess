@@ -16,11 +16,13 @@ configure the right port you need to run. or just use the run default
 
 update the ui project `config.json` file with the backend url. as the UI project is built as a separate service not hosted as a static files within the .net proj.
 
-then
-
 ## Run the sample ui 
 
 Run `npm i`, then `npm start` open `http://localhost:8080`
+
+the application uses i18n to translate strings and default language is english
+
+you can test query param `?lang=en` or `?lang=de` those are the json translation files i have added.
 
 ## CI pipline
 i have also developed a CI pipeline within github to validate the proj with every pr and merge to master branch
