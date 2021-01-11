@@ -231,3 +231,31 @@
 2021-01-11 04:33:05.739 +02:00 [INF] Executed action Hahn.ApplicatonProcess.December2020.Web.Controllers.ApplicantsController.PostApplicant (Hahn.ApplicatonProcess.December2020.Web) in 386.1097ms
 2021-01-11 04:33:05.739 +02:00 [INF] Executed endpoint 'Hahn.ApplicatonProcess.December2020.Web.Controllers.ApplicantsController.PostApplicant (Hahn.ApplicatonProcess.December2020.Web)'
 2021-01-11 04:33:05.740 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44361/api/applicants application/json 156 - 201 - application/json;+charset=utf-8 387.0018ms
+2021-01-11 04:43:15.428 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44361/api/applicants - -
+2021-01-11 04:43:15.428 +02:00 [INF] CORS policy execution successful.
+2021-01-11 04:43:15.434 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44361/api/applicants - - - 204 - - 6.5492ms
+2021-01-11 04:43:15.436 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44361/api/applicants application/json 154
+2021-01-11 04:43:15.437 +02:00 [INF] CORS policy execution successful.
+2021-01-11 04:43:15.441 +02:00 [INF] Executing endpoint 'Hahn.ApplicatonProcess.December2020.Web.Controllers.ApplicantsController.PostApplicant (Hahn.ApplicatonProcess.December2020.Web)'
+2021-01-11 04:43:15.441 +02:00 [INF] Route matched with {action = "PostApplicant", controller = "Applicants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Hahn.ApplicatonProcess.December2020.Domain.Models.Applicant]] PostApplicant(Hahn.ApplicatonProcess.December2020.Domain.Models.Applicant) on controller Hahn.ApplicatonProcess.December2020.Web.Controllers.ApplicantsController (Hahn.ApplicatonProcess.December2020.Web).
+2021-01-11 04:43:15.896 +02:00 [INF] Entity Framework Core 5.0.1 initialized 'ApplicantsDbContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=HahnInMemory 
+2021-01-11 04:43:15.896 +02:00 [INF] Saved 1 entities to in-memory store.
+2021-01-11 04:43:15.896 +02:00 [INF] Applicant 6 was created
+2021-01-11 04:43:15.896 +02:00 [INF] Executing CreatedAtActionResult, writing value of type 'Hahn.ApplicatonProcess.December2020.Domain.Models.Applicant'.
+2021-01-11 04:43:15.897 +02:00 [INF] Executed action Hahn.ApplicatonProcess.December2020.Web.Controllers.ApplicantsController.PostApplicant (Hahn.ApplicatonProcess.December2020.Web) in 456.1034ms
+2021-01-11 04:43:15.897 +02:00 [INF] Executed endpoint 'Hahn.ApplicatonProcess.December2020.Web.Controllers.ApplicantsController.PostApplicant (Hahn.ApplicatonProcess.December2020.Web)'
+2021-01-11 04:43:15.897 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44361/api/applicants application/json 154 - 201 - application/json;+charset=utf-8 461.1971ms
+2021-01-11 04:44:13.916 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44361/api/applicants - -
+2021-01-11 04:44:13.916 +02:00 [INF] CORS policy execution successful.
+2021-01-11 04:44:13.917 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44361/api/applicants - - - 204 - - 1.6883ms
+2021-01-11 04:44:13.921 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44361/api/applicants application/json 154
+2021-01-11 04:44:13.922 +02:00 [INF] CORS policy execution successful.
+2021-01-11 04:44:13.922 +02:00 [INF] Executing endpoint 'Hahn.ApplicatonProcess.December2020.Web.Controllers.ApplicantsController.PostApplicant (Hahn.ApplicatonProcess.December2020.Web)'
+2021-01-11 04:44:13.922 +02:00 [INF] Route matched with {action = "PostApplicant", controller = "Applicants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Hahn.ApplicatonProcess.December2020.Domain.Models.Applicant]] PostApplicant(Hahn.ApplicatonProcess.December2020.Domain.Models.Applicant) on controller Hahn.ApplicatonProcess.December2020.Web.Controllers.ApplicantsController (Hahn.ApplicatonProcess.December2020.Web).
+2021-01-11 04:44:14.320 +02:00 [INF] Entity Framework Core 5.0.1 initialized 'ApplicantsDbContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=HahnInMemory 
+2021-01-11 04:44:14.320 +02:00 [INF] Saved 1 entities to in-memory store.
+2021-01-11 04:44:14.320 +02:00 [INF] Applicant 7 was created
+2021-01-11 04:44:14.320 +02:00 [INF] Executing CreatedAtActionResult, writing value of type 'Hahn.ApplicatonProcess.December2020.Domain.Models.Applicant'.
+2021-01-11 04:44:14.321 +02:00 [INF] Executed action Hahn.ApplicatonProcess.December2020.Web.Controllers.ApplicantsController.PostApplicant (Hahn.ApplicatonProcess.December2020.Web) in 398.8154ms
+2021-01-11 04:44:14.321 +02:00 [INF] Executed endpoint 'Hahn.ApplicatonProcess.December2020.Web.Controllers.ApplicantsController.PostApplicant (Hahn.ApplicatonProcess.December2020.Web)'
+2021-01-11 04:44:14.325 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44361/api/applicants application/json 154 - 201 - application/json;+charset=utf-8 403.5941ms
