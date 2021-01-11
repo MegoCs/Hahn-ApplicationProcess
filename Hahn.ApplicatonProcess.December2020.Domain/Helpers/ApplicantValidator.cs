@@ -20,6 +20,7 @@ namespace Hahn.ApplicatonProcess.December2020.Domain.Helpers
                 .MinimumLength(10);
 
             RuleFor(x => x.CountryOfOrigin)
+                .NotNull()
                 .CustomAsync(async (country, context, cancelToken) =>
                 {
                     HttpClient client = new HttpClient();
@@ -29,8 +30,8 @@ namespace Hahn.ApplicatonProcess.December2020.Domain.Helpers
                     client.Dispose();
                 });
 
-            RuleFor(x => x.EmailAdress)
-                .NotEmpty()
+            RuleFor(x => x.EmailAddress)
+                .NotNull()
                 .EmailAddress()
                 .Matches(@".*@.*\.(com|net|org|gov)$");
 

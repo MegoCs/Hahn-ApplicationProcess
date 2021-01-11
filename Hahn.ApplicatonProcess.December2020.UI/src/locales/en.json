@@ -14,5 +14,5 @@
   "EmailalidationMessage":"Is Not a Valid Email",
   "CountryValidationMessage":"Is Not a Valid Country",
   "AgeValidationMessage":"Age Must Be Between 20 And 60",
-  "LengthValidationMessage":"Minlength Is "
+  "LengthValidationMessage":"Min length Is "
 }

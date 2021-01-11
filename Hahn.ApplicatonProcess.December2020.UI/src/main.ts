@@ -7,6 +7,8 @@ export function configure(aurelia: Aurelia): void {
   aurelia.use
     .standardConfiguration()
     .plugin(PLATFORM.moduleName('aurelia-validation'))
+    .plugin(PLATFORM.moduleName('aurelia-dialog'))
+    .plugin(PLATFORM.moduleName('aurelia-configuration'))
     .plugin(PLATFORM.moduleName('aurelia-i18n'), (instance) => {
       // register backend plugin
       instance.i18next.use(XHR);

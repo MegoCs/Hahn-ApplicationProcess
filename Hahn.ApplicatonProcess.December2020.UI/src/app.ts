@@ -7,7 +7,7 @@ export class App {
     config.options.pushState = true;
     config.map([
       { route: ['', 'Applicant/:langUrl'],name: 'Applicant', title: 'Applicants', moduleId: PLATFORM.moduleName('components/applicant/create-applicant/create-applicant'), nav: true },
-      { route: ['ApplicantResponse'], name: 'Applicant', title: 'Applicants', moduleId: PLATFORM.moduleName('components/applicant/applicant-response/applicant-response'), nav: true }    ]);  
+      { route: ['applicantResponse'], name: 'Applicant', title: 'Applicants', moduleId: PLATFORM.moduleName('components/applicant/applicant-response/applicant-response'), nav: true }    ]);  
   }
   static inject = [I18N];
     constructor(private i18n:I18N) {

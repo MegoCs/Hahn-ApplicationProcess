@@ -15,6 +15,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
+using Swashbuckle.AspNetCore.Swagger;
+
 namespace Hahn.ApplicatonProcess.December2020.Web
 {
     public class Startup
@@ -32,7 +34,16 @@ namespace Hahn.ApplicatonProcess.December2020.Web
 
             services.AddControllers()
                     .AddFluentValidation();
-
+            services.AddCors(options =>
+            {
+                options.AddPolicy("all",
+                                  builder =>
+                                  {
+                                      builder.AllowAnyOrigin();
+                                      builder.AllowAnyMethod();
+                                      builder.AllowAnyHeader();
+                                  });
+            });
             services.AddTransient<IValidator<Applicant>, ApplicantValidator>();
             services.AddScoped<IApplicantsRepository, ApplicantsRepository>();
             services.AddDbContext<ApplicantsDbContext>(opt => opt.UseInMemoryDatabase(databaseName: "HahnInMemory"));
@@ -40,6 +51,7 @@ namespace Hahn.ApplicatonProcess.December2020.Web
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Hahn.ApplicatonProcess.December2020.Web", Version = "v1" });
+                c.AddFluentValidationRules();
             });
 
             services.AddLogging(loggingBuilder =>
@@ -63,6 +75,7 @@ namespace Hahn.ApplicatonProcess.December2020.Web
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors("all");
 
             app.UseAuthorization();
 

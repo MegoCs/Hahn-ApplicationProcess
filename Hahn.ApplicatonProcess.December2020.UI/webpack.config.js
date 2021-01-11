@@ -264,6 +264,13 @@ module.exports = ({ production } = {}, {extractCss, analyze, tests, hmr, port, h
         { from: 'src/locales/', to: 'locales/' }
       ]
     }),
+
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'config/config.json', to: 'config/' }
+      ]
+    }),
+    
     /**
      * Note that the usage of following plugin cleans the webpack output directory before build.
      * In case you want to generate any file in the output path as a part of pre-build step, this plugin will likely
