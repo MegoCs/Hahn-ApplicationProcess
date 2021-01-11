@@ -1,3 +1,25 @@
 {
-
-}
+    "CreateApplicant": "Bewerber erstellen",
+    "Name": "Name des Bewerbers",
+    "FamilyName": "Nachname",
+    "Address": "Adresse",
+    "CountryOfOrigin": "Herkunftsland",
+    "EmailAddress": "E-Mail-Addresse",
+    "Age": "Alter",
+    "Hired": "Gemietet",
+    "Send": "Senden",
+    "Reset": "Zurücksetzen",
+    "DataSentMessage":"Ihre Informationen wurden gesendet",
+    "RequiredValidationMessage":"Darf nicht leer sein.",
+    "EmailalidationMessage":"Ist keine gültige E-Mail",
+    "CountryValidationMessage":"Ist kein gültiges Land",
+    "AgeValidationMessage":"Das Alter muss zwischen 20 und 60 Jahren liegen",
+    "LengthValidationMessage":"Min. Länge ist ",
+    "applicationSent":"Vielen Dank, Ihre Bewerbung wird gesendet",
+    "submitNew":"Neue Bewerbung einreichen",
+    "somethingWentWrong":"Ein Fehler ist aufgetreten",
+    "Confirm":"Bestätigen",
+    "Cancel":"Stornieren",
+    "Close":"Schließen",
+    "resetFormMessage":"Sind Sie sicher, dass Sie zurücksetzen möchten ?"
+  }

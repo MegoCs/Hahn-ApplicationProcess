@@ -1,17 +1,21 @@
 import { Applicant } from "../models/Applicant"
-import { inject, NewInstance } from 'aurelia-framework';
-import { ValidationRules, ValidationController, validationMessages } from "aurelia-validation";
+import { ValidationRules, ValidationController, validationMessages, ValidateEvent, Validator } from "aurelia-validation";
 import { BootstrapFormRenderer } from '../../../core/renderers/bootstrapformrenderer'
 import { I18N } from "aurelia-i18n";
 import { autoinject } from 'aurelia-framework';
 import { DialogService } from 'aurelia-dialog';
 import { ApplicantService } from "../applicant-service"
-import {Router} from 'aurelia-router';
+import { Router } from 'aurelia-router';
+import { Prompt } from '../../../core/modals/confirm-modal/confirm-modal'
+import { ErrorPrompt } from '../../../core/modals/error-modal/error-modal'
 
 @autoinject
 export class CreateApplicant {
   public applicant: Applicant = new Applicant;
-  constructor(private router:Router,private applicantService: ApplicantService, private i18n: I18N, private controller: ValidationController, private dialogService: DialogService) {
+  clone: Applicant = new Applicant;
+  sendDisabled: boolean = true;
+  resetDisabled:boolean = true;
+  constructor(private validator:Validator,private router: Router, private applicantService: ApplicantService, private i18n: I18N, private controller: ValidationController, private dialogService: DialogService) {
     this.i18n.i18nextReady().then(() => {
       this.configureValidation();
     });
@@ -60,14 +64,12 @@ export class CreateApplicant {
       .between(19, 61).withMessageKey('AgeValidationMessage')
       .on(this.applicant);
 
-  }
-
-  get sendDisabled() {
-    return this.controller.errors.length != 0 ;
-  };
-
-  get resetDisabled() {
-    return false;
+      this.controller.subscribe((event: ValidateEvent) => {
+        this.validator.validateObject(this.applicant).then(res =>{
+          this.sendDisabled = res.filter(r=>!r.valid).length != 0;
+          this.resetDisabled = res.filter(r=>!r.valid).length == res.length;
+        });
+      })
   }
 
   send() {
@@ -76,20 +78,15 @@ export class CreateApplicant {
         this.router.navigate("applicantResponse");
       })
       .catch(err => {
-        console.log(err);
+        this.dialogService.open({ viewModel: ErrorPrompt, model: 'error message' });
       });
   }
-  reset() {
-    //show reset dialog and reset the form
-    // are you sure you need to reset all the data ?
 
-    // this.dialogService.open({ viewModel: Prompt, model: 'Good or Bad?', lock: false }).whenClosed(response => {
-    //   if (!response.wasCancelled) {
-    //     console.log('good');
-    //   } else {
-    //     console.log('bad');
-    //   }
-    //   console.log(response.output);
-    // });
+  reset() {
+    this.dialogService.open({ viewModel: Prompt, model: this.i18n.tr('resetFormMessage') }).whenClosed(response => {
+      if (!response.wasCancelled) {
+        this.controller.reset();
+      }
+    });
   }
 }

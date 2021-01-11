@@ -16,5 +16,10 @@
   "AgeValidationMessage":"Age Must Be Between 20 And 60",
   "LengthValidationMessage":"Min length Is ",
   "applicationSent":"Thank you, your application is sent",
-  "submitNew":"Submit new application"
+  "submitNew":"Submit new application",
+  "somethingWentWrong":"Error Occurred",
+  "Confirm":"Confirm",
+  "Cancel":"Cancel",
+  "Close":"Close",
+  "resetFormMessage":"Are You Sure You wanna Reset ?"
 }
