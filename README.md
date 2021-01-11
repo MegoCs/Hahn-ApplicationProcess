@@ -1,4 +1,6 @@
-# `hahn-ui`
+# `hahn-Applicants Sample`
+
+![Main_CI](https://github.com/MegoCs/Hahn-ApplicatonProcess/workflows/Main_CI/badge.svg?branch=master)
 
 This project is bootstrapped by [aurelia-cli](https://github.com/aurelia/cli).
 
