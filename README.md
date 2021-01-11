@@ -6,30 +6,21 @@ This project is bootstrapped by [aurelia-cli](https://github.com/aurelia/cli).
 
 For more information, go to https://aurelia.io/docs/cli/webpack
 
-## Run dev app
+## Build the sample backend 
 
-Run `npm start`, then open `http://localhost:8080`
+you can directly use `dotnet run` with the Web Api project location 
 
-You can change the standard webpack configurations from CLI easily with something like this: `npm start -- --open --port 8888`. However, it is better to change the respective npm scripts or `webpack.config.js` with these options, as per your need.
+`Hahn.ApplicatonProcess.Application\Hahn.ApplicatonProcess.December2020.Web`
 
-To enable Webpack Bundle Analyzer, do `npm run analyze` (production build).
+configure the right port you need to run. or just use the run default
 
-To enable hot module reload, do `npm start -- --hmr`.
+update the ui project `config.json` file with the backend url. as the UI project is built as a separate service not hosted as a static files within the .net proj.
 
-To change dev server port, do `npm start -- --port 8888`.
+then
 
-To change dev server host, do `npm start -- --host 127.0.0.1`
+## Run the sample ui 
 
-**PS:** You could mix all the flags as well, `npm start -- --host 127.0.0.1 --port 7070 --open --hmr`
+Run `npm i`, then `npm start` open `http://localhost:8080`
 
-For long time aurelia-cli user, you can still use `au run` with those arguments like `au run --env prod --open --hmr`. But `au run` now simply executes `npm start` command.
-
-## Build for production
-
-Run `npm run build`, or the old way `au build --env prod`.
-
-## Unit tests
-
-Run `au test` (or `au jest`).
-
-To run in watch mode, `au test --watch` or `au jest --watch`.
+## CI pipline
+i have also developed a CI pipeline within github to validate the proj with every pr and merge to master branch
