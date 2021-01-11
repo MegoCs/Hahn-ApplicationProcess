@@ -26,3 +26,10 @@ you can test query param `?lang=en` or `?lang=de` those are the json translation
 
 ## CI pipline
 i have also developed a CI pipeline within github to validate the proj with every pr and merge to master branch
+
+## Consume Pipeline Artifacts
+also you can visit the actions and fetch latest build and download the artifacts directly.
+
+`Hahn-Web` for the .net web api project
+
+`Hahn-Ui` is the dist folder of the aurelia project
