@@ -35,3 +35,9 @@ jobs:
       
     - run: npm run-script build
       working-directory: Hahn.ApplicatonProcess.December2020.UI
+    
+    - uses: actions/upload-artifact@v2
+      with:
+        name: Hahn-Ui
+        path: Hahn.ApplicatonProcess.December2020.UI/dist
+    
