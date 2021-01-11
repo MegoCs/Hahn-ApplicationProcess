@@ -4,6 +4,7 @@ using Hahn.ApplicatonProcess.December2020.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Hahn.ApplicatonProcess.December2020.Data.Infrastructure
@@ -42,6 +43,11 @@ namespace Hahn.ApplicatonProcess.December2020.Data.Infrastructure
         public Task<Applicant> GetApplicant(int id)
         {
             return _dbContext.Applicants.AsNoTracking().FirstOrDefaultAsync(a=>a.ID==id);
+        }
+
+        public async Task<IEnumerable<Applicant>> GetApplicants()
+        {
+            return await _dbContext.Applicants.ToListAsync();
         }
 
         public async Task<Applicant> UpdateApplicant(int id, Applicant applicant)

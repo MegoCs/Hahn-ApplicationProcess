@@ -11,11 +11,10 @@ import { ErrorPrompt } from '../../../core/modals/error-modal/error-modal'
 
 @autoinject
 export class CreateApplicant {
-  public applicant: Applicant = new Applicant;
-  clone: Applicant = new Applicant;
+  public applicant: Applicant = new Applicant();
   sendDisabled: boolean = true;
-  resetDisabled:boolean = true;
-  constructor(private validator:Validator,private router: Router, private applicantService: ApplicantService, private i18n: I18N, private controller: ValidationController, private dialogService: DialogService) {
+  resetDisabled: boolean = true;
+  constructor(private validator: Validator, private router: Router, private applicantService: ApplicantService, private i18n: I18N, private controller: ValidationController, private dialogService: DialogService) {
     this.i18n.i18nextReady().then(() => {
       this.configureValidation();
     });
@@ -63,13 +62,13 @@ export class CreateApplicant {
       .required().withMessageKey('RequiredValidationMessage')
       .between(19, 61).withMessageKey('AgeValidationMessage')
       .on(this.applicant);
-
-      this.controller.subscribe((event: ValidateEvent) => {
-        this.validator.validateObject(this.applicant).then(res =>{
-          this.sendDisabled = res.filter(r=>!r.valid).length != 0;
-          this.resetDisabled = res.filter(r=>!r.valid).length == res.length;
-        });
-      })
+      
+    this.controller.subscribe((event: ValidateEvent) => {
+      this.validator.validateObject(this.applicant).then(res => {
+        this.sendDisabled = res.filter(r => !r.valid).length != 0;
+        this.resetDisabled = res.filter(r => !r.valid).length == res.length  ;
+      });
+    })
   }
 
   send() {
@@ -85,8 +84,16 @@ export class CreateApplicant {
   reset() {
     this.dialogService.open({ viewModel: Prompt, model: this.i18n.tr('resetFormMessage') }).whenClosed(response => {
       if (!response.wasCancelled) {
+        this.resetModel(this.applicant);
         this.controller.reset();
       }
     });
+  }
+
+  resetModel(objToClear) {
+    var props = Object.getOwnPropertyNames(objToClear).filter(x => !x.startsWith('__'));
+    for (var i = 0; i < props.length; i++) {
+      objToClear[props[i]] = undefined;
+    }
   }
 }
