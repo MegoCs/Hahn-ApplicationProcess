@@ -7,18 +7,18 @@
         public string FamilyName { get; set; }
         public string Address { get; set; }
         public string CountryOfOrigin { get; set; }
-        public string EmailAdress { get; set; }
+        public string EmailAddress { get; set; }
         public int Age { get; set; }
         public bool Hired { get; set; }
 
-        public Applicant(int iD, string name, string familyName, string address, string countryOfOrigin, string emailAdress, int age, bool hired = false)
+        public Applicant(int iD, string name, string familyName, string address, string countryOfOrigin, string emailAddress, int age, bool hired = false)
         {
             ID = iD;
             Name = name;
             FamilyName = familyName;
             Address = address;
             CountryOfOrigin = countryOfOrigin;
-            EmailAdress = emailAdress;
+            EmailAddress = emailAddress;
             Age = age;
             Hired = hired;
         }

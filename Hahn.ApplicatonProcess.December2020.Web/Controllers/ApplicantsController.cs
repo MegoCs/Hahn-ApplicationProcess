@@ -4,6 +4,7 @@ using Hahn.ApplicatonProcess.December2020.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Hahn.ApplicatonProcess.December2020.Web.Controllers
@@ -34,6 +35,15 @@ namespace Hahn.ApplicatonProcess.December2020.Web.Controllers
             }
 
             return applicant;
+        }
+
+        // GET: api/Applicants
+        [HttpGet]
+        public async Task<IEnumerable<Applicant>> GetApplicants()
+        {
+            var applicants = await _applicantsRepository.GetApplicants();
+
+            return applicants;
         }
 
         // PUT: api/Applicants/5

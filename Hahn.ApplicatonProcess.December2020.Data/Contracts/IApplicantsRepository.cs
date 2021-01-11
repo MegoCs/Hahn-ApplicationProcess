@@ -1,5 +1,6 @@
 ﻿using Hahn.ApplicatonProcess.December2020.Domain.Models;
 
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Hahn.ApplicatonProcess.December2020.Data.Contracts
@@ -19,6 +20,13 @@ namespace Hahn.ApplicatonProcess.December2020.Data.Contracts
         /// <param name="id"></param>
         /// <returns></returns>
         Task<Applicant> GetApplicant(int id);
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        Task<IEnumerable<Applicant>> GetApplicants();
 
         /// <summary>
         /// 

@@ -1,0 +1,24 @@
+<template>
+  <require from="./applicant-response.css"></require>
+
+  <div class="icon-wrp position-absolute rounded-circle "><span class="lib-icon-check "></span></div>
+
+  <div class="lib-messages">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+          <div class="message-wrp bg-white shadow rounded">
+            <div class="main-message-content position-relative">
+              <div class="d-block text-center">
+                <h4 class="message-title">${'applicationSent' & t}</h4>
+                <p class="optional-message"><a href="/">${'submitNew' & t}</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

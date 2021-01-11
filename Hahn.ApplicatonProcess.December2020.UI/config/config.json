@@ -1,0 +1,5 @@
+{
+    "apiHost":"https://localhost:44361",
+    "applicantApiSection":"/api/applicants",
+    "countryValidationUrl":"https://restcountries.eu/rest/v2/name/"
+}

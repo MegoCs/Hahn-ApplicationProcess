@@ -1,0 +1,54 @@
+<template>
+  <require from="./create-applicant.css"></require>
+  <form class="form card" submit.trigger="send()" role = "form" ref = "myForm">
+    <div class="card-block mx-auto">
+      <h4 class="my-5">${'CreateApplicant' & t}</h4>
+      <hr />
+      <div class="form-group">
+        <label for="name">${'Name' & t}</label>
+        <input name="name" class="form-control" value.two-way="applicant.name & validate"></input>
+      </div>
+
+      <div class="form-group">
+        <label for="familyName">${'FamilyName' & t}</label>
+        <input name="familyName" class="form-control" value.two-way="applicant.familyName & validate"></input>
+      </div>
+
+      <div class="form-group">
+        <label for="address">${'Address' & t}</label>
+        <input name="address" class="form-control" value.two-way="applicant.address & validate"></input>
+      </div>
+
+      <div class="form-group">
+        <label for="countryOfOrigin">${'CountryOfOrigin' & t}</label>
+        <input name="countryOfOrigin" class="form-control" value.two-way="applicant.countryOfOrigin & validate"></input>
+      </div>
+
+      <div class="form-group">
+        <label for="emailAddress">${'EmailAddress' & t}</label>
+        <input name="emailAddress" class="form-control" value.two-way="applicant.emailAddress & validate"></input>
+      </div>
+
+      <div class="form-group">
+        <label for="age">${'Age' & t}</label>
+        <input type='number' name="age" class="form-control" value.two-way="applicant.age & validate"></input>
+      </div>
+
+      <div class="form-group">
+        <input type="checkbox" name="hired" checked.two-way="applicant.hired & validate" />
+        <label for="hired">${'Hired' & t}</label>
+      </div>
+
+      <hr />
+
+      <button type="submit" class="btn btn-primary" disabled.bind="sendDisabled">
+        ${'Send' & t}
+      </button>
+
+      <button type="button" click.delegate="reset()" class="btn btn-primary" disabled.bind="resetDisabled">
+        ${'Reset' & t}
+      </button>
+
+  </form>
+  </div>
+</template>
